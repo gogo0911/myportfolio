@@ -1,0 +1,573 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img, video {
+  vertical-align: top;
+}
+
+@font-face {
+  src: url("../fonts/sapphire.woff");
+  font-family: "sapphire";
+}
+body {
+  line-height: 1;
+  font-family: "sapphire";
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+.wrap .bgFrame .bgvid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+.wrap .bgFrame > img {
+  position: absolute;
+  width: 250px;
+}
+.wrap .bgFrame .left_top {
+  top: 0;
+  left: 0;
+}
+.wrap .bgFrame .right_top {
+  top: 0;
+  right: 0;
+}
+.wrap .bgFrame .left_bot {
+  left: 0;
+  bottom: 0;
+}
+.wrap .bgFrame .right_bot {
+  right: 0;
+  bottom: 0;
+}
+.wrap .circles {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  z-index: 99;
+  transform: translateX(-50%);
+  display: flex;
+}
+.wrap .circles > li {
+  margin: 0 10px;
+  background-color: #000;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+.wrap .circles > li > a {
+  display: flex;
+  width: 30px;
+  height: 30px;
+}
+.wrap .circles > li.on {
+  background-color: #ffe7b5;
+  box-shadow: 0 0 5px #a47b24, 0 0 10px #a47b24, 0 0 20px #a47b24;
+  opacity: 1;
+}
+.wrap .scroll-container {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.wrap .scroll-container .page {
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  margin-left: 0;
+}
+.wrap .scroll-container .page1 {
+  justify-content: center;
+  align-items: center;
+}
+.wrap .scroll-container .page1 .imgWrap {
+  width: 600px;
+  height: 300px;
+}
+.wrap .scroll-container .page1 .imgWrap .h_logo {
+  opacity: 0;
+  transition: all 2s ease-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  width: 600px;
+  z-index: 2;
+  cursor: pointer;
+}
+.wrap .scroll-container .page1 .imgWrap .onoff {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  animation: onoff 1s infinite linear;
+  z-index: 3;
+}
+@keyframes onoff {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.wrap .scroll-container .page1 .gamePack {
+  transition: all 1s;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 29%;
+  transform: translateX(-50%);
+  width: 880px;
+  height: 600px;
+}
+.wrap .scroll-container .page1 .gamePack > div {
+  width: 420px;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.wrap .scroll-container .page1 .gamePack > div > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.wrap .scroll-container .page1 .gamePack > div h2 {
+  font-size: 22px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffe7b5;
+  transition: all 0.5s;
+}
+.wrap .scroll-container .page1 .gamePack > div:hover {
+  box-shadow: 0 0 20px rgba(247, 191, 26, 0.521);
+}
+.wrap .scroll-container .page1 .gamePack > div:hover h2 {
+  text-shadow: 0 0 5px #a47b24, 0 0 10px #a47b24, 0 0 20px #a47b24;
+}
+.wrap .scroll-container .page1 .gamePack .boxs2 {
+  right: 0;
+}
+.wrap .scroll-container .page2 {
+  align-items: center;
+  flex-direction: column;
+}
+.wrap .scroll-container .page2 .title {
+  margin: 60px 0;
+  text-align: center;
+}
+.wrap .scroll-container .page2 .center {
+  display: flex;
+  width: 1500px;
+  justify-content: space-between;
+}
+.wrap .scroll-container .page2 .center .boxWrap {
+  display: flex;
+  width: 450px;
+  height: 590px;
+  position: relative;
+  transform: translateX(0px);
+  z-index: 2;
+  transition: all 1s;
+  top: 0;
+  left: 0;
+  background-image: url(../img/bg2.png);
+  cursor: pointer;
+}
+.wrap .scroll-container .page2 .center .boxWrap .imgWrap {
+  width: 100%;
+  height: 100%;
+}
+.wrap .scroll-container .page2 .center .boxWrap .imgWrap img {
+  position: absolute;
+  width: 100%;
+}
+.wrap .scroll-container .page2 .center .boxWrap .imgWrap .titleImg {
+  width: 90%;
+  top: 60px;
+  left: 5%;
+  -webkit-clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+          clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+}
+.wrap .scroll-container .page2 .center .boxWrap .imgWrap .topLogo {
+  right: 38px;
+  top: 27px;
+  width: 90px;
+}
+.wrap .scroll-container .page2 .center .boxWrap .imgWrap .botLogo {
+  left: 35px;
+  bottom: 27px;
+  width: 90px;
+}
+.wrap .scroll-container .page2 .center .boxWrap .textWrap {
+  position: absolute;
+  top: 60px;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+          clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+  background-color: rgba(17, 17, 17, 0.4666666667);
+  color: #fff;
+  width: 90%;
+  height: 467px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.wrap .scroll-container .page2 .center .boxWrap .textWrap h2 {
+  font-size: 19px;
+}
+.wrap .scroll-container .page2 .center .boxWrap .textWrap p {
+  font-size: 14px;
+  padding: 20px;
+  word-break: keep-all;
+  text-align: center;
+  line-height: 23px;
+}
+.wrap .scroll-container .page2 .center .boxWrap:hover {
+  box-shadow: 0 0 20px rgba(247, 191, 26, 0.521);
+}
+.wrap .scroll-container .page2 .center .boxWrap:hover .textWrap {
+  opacity: 1;
+}
+.wrap .scroll-container .page2 .center .boxWrap:hover .textWrap h2 {
+  text-shadow: 0 0 5px #a47b24, 0 0 10px #a47b24, 0 0 20px #a47b24;
+}
+.wrap .scroll-container .page2 .center .popupWrap button {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 3;
+  border: none;
+  opacity: 0;
+  transition: all 0.5s;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+}
+.wrap .scroll-container .page2 .center .popupWrap button i {
+  font-size: 30px;
+  transition: all 0.5s;
+}
+.wrap .scroll-container .page2 .center .popupWrap button:hover {
+  color: #ffe7b5;
+  text-shadow: 0 0 5px #a47b24, 0 0 10px #a47b24, 0 0 20px #a47b24;
+}
+.wrap .scroll-container .page2 .center .popupWrap .prev {
+  left: 141%;
+}
+.wrap .scroll-container .page2 .center .popupWrap .next {
+  right: -75.5%;
+}
+.wrap .scroll-container .page2 .center .popupWrap .popup {
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  top: 192px;
+  left: 140%;
+  width: 700px;
+  height: 590px;
+  overflow: hidden;
+  text-align: center;
+}
+.wrap .scroll-container .page2 .center .popupWrap .popup .slide {
+  display: flex;
+  width: 300%;
+  position: relative;
+  top: 30px;
+  transition: all 0.5s;
+  margin-left: 0%;
+}
+.wrap .scroll-container .page2 .center .popupWrap .popup .slide .view {
+  box-sizing: border;
+  margin: 40px;
+  width: 33.333333%;
+  position: relative;
+}
+.wrap .scroll-container .page2 .center .popupWrap .popup .slide .view img {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 450px;
+}
+.wrap .scroll-container .page3 {
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .scroll-container .page3 .vidWrap {
+  transition: all 0.5s;
+  width: 1000px;
+  height: 583px;
+  position: relative;
+  background-image: url(../img/bg2.png);
+  cursor: pointer;
+}
+.wrap .scroll-container .page3 .vidWrap img {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrap .scroll-container .page3 .vidWrap .playWrap {
+  position: absolute;
+  width: 340px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrap .scroll-container .page3 .vidWrap .playWrap .play {
+  width: 108px;
+  left: 54%;
+}
+.wrap .scroll-container .page3 .vidWrap .playWrap .circle {
+  width: 340px;
+  transition: all 0.5s;
+}
+.wrap .scroll-container .page3 .vidWrap:hover .circle {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.wrap .scroll-container .page3 .vidWrap .vidLink {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url(../img/bg2.png);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 1s;
+}
+.wrap .scroll-container .page3 .vidWrap .vidLink .video {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.wrap .scroll-container .page3 .vidWrap .vidLink > div {
+  position: absolute;
+  top: -4px;
+  right: 5px;
+  font-size: 50px;
+  color: #fff;
+  cursor: pointer;
+}
+.wrap .scroll-container .page3 .carouselWrap {
+  width: 1000px;
+  height: 200px;
+  overflow: hidden;
+  background-color: #333;
+}
+.wrap .scroll-container .page3 .carouselWrap .carousel {
+  margin-left: -33.333333%;
+  width: 200%;
+  display: flex;
+}
+.wrap .scroll-container .page3 .carouselWrap .carousel > div {
+  word-break: keep-all;
+  margin: 10px;
+  overflow: hidden;
+  width: 16.666666%;
+  height: 160px;
+  line-height: 20px;
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.wrap .scroll-container .page3 .carouselWrap .carousel > div img {
+  width: 100%;
+  height: 100%;
+}
+.wrap .scroll-container .page3 .carouselWrap .carousel > div:hover {
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #000;
+}
+.wrap .scroll-container .page3 .btns {
+  position: absolute;
+  bottom: 195px;
+  width: 1050px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.wrap .scroll-container .page3 .btns > div {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+  font-size: 40px;
+}
+.wrap .scroll-container .page3 .btns > div i {
+  color: #ffe7b5;
+  transition: all 0.5s;
+}
+.wrap .scroll-container .page3 .btns > div:hover .fa-solid {
+  text-shadow: 0 0 5px #a47b24, 0 0 10px #a47b24, 0 0 20px #a47b24;
+}
+.wrap .scroll-container .page4 {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.wrap .scroll-container .page4 .center {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.wrap .scroll-container .page4 .center .swiper {
+  width: 1200px;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper {
+  display: flex;
+  width: 450px;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide .title {
+  border-radius: 20px 0 20px 0;
+  width: 100%;
+  background-color: #111;
+  color: #ffe7b5;
+  transition: all 0.5s;
+  margin-bottom: 30px;
+  font-size: 34px;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide:hover h2 {
+  text-shadow: 0 0 5px #a47b24, 0 0 10px #a47b24, 0 0 20px #a47b24;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide .boxs {
+  width: 450px;
+  height: 590px;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-image: url(../img/bg2.png);
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide .boxs .imgWrap {
+  height: 100%;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide .boxs .imgWrap img {
+  position: absolute;
+  width: 100%;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide .boxs .imgWrap .titleImg {
+  width: 90%;
+  top: 60px;
+  left: 5%;
+  -webkit-clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+          clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide .boxs .imgWrap .topLogo {
+  right: 54px;
+  top: 35px;
+  width: 60px;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide .boxs .imgWrap .botLogo {
+  left: 48px;
+  bottom: 42px;
+  width: 60px;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide .boxs .textWrap {
+  position: absolute;
+  top: 60px;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+          clip-path: polygon(0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+  background-color: rgba(17, 17, 17, 0.4666666667);
+  color: #fff;
+  width: 90%;
+  height: 467px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide .boxs .textWrap h2 {
+  font-size: 20px;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide .boxs .textWrap p {
+  font-size: 14px;
+  padding: 20px;
+  word-break: keep-all;
+  text-align: center;
+  line-height: 23px;
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide .boxs:hover {
+  box-shadow: 0 0 20px rgba(247, 191, 26, 0.521);
+}
+.wrap .scroll-container .page4 .center .swiper .swiper-wrapper .swiper-slide .boxs:hover .textWrap {
+  opacity: 1;
+}
