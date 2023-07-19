@@ -32,6 +32,7 @@ scrollContainer.addEventListener('wheel', function(event) {
     circles[currentPageIndex].classList.add('on');
     
 });
+// 페이지네이션
 for(let i=0; i<circles.length; i++){
     circles[i].onclick = function(){ //해당 동그라미 버튼 클릭 시
         currentPageIndex = i; // 해당 동그라미 순번과 같은 숫자값이 currentPageIndex에 담김
@@ -57,7 +58,7 @@ h_logo.onclick = function(){ // 로고 클릭시 게임팩구매화면 나오게
         h_logo.style.top = ("15%");
         setTimeout(function() {
             gamePack.style.opacity = '1';
-        }, 2000);
+        }, 1000);
         toggle = !toggle
     }
     else{

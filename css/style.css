@@ -79,8 +79,8 @@ body {
 }
 .wrap .circles > li > a {
   display: flex;
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
 }
 .wrap .circles > li.on {
   background-color: #ffe7b5;
@@ -114,7 +114,7 @@ body {
 }
 .wrap .scroll-container .page1 .imgWrap .h_logo {
   opacity: 0;
-  transition: all 2s ease-out;
+  transition: all 1s ease-out;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -385,7 +385,7 @@ body {
   top: 0;
   background-image: url(../img/bg2.png);
   width: 100%;
-  height: 100%;
+  height: 0%;
   overflow: hidden;
   transition: all 1s;
 }
@@ -395,6 +395,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.wrap .scroll-container .page3 .vidWrap .vidLink .video .ytp-impression-link {
+  display: none;
+}
+.wrap .scroll-container .page3 .vidWrap .vidLink .video a {
+  display: none;
 }
 .wrap .scroll-container .page3 .vidWrap .vidLink > div {
   position: absolute;
@@ -442,16 +448,21 @@ body {
   position: absolute;
   bottom: 195px;
   width: 1050px;
-  height: 40px;
   display: flex;
   justify-content: space-between;
+}
+.wrap .scroll-container .page3 .btns .leftBtn {
+  left: 0;
+  width: 25px;
 }
 .wrap .scroll-container .page3 .btns > div {
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin: 40px 0;
   font-size: 40px;
+  position: absolute;
+  top: -15px;
+  right: 0;
 }
 .wrap .scroll-container .page3 .btns > div i {
   color: #ffe7b5;
